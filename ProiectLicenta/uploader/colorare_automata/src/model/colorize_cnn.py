@@ -105,10 +105,3 @@ class CNN(object):
 
         if self.__mode == 'eval':
             self.__launch_eval(**self.__parameters)
-
-# if __name__ == "__main__":
-#     # cnn = CNN('eval', '../../data/processed/HDF5_data_64.h5', nb_neighbors=5, load_weight_epoch=3936,
-#     #           path_to_gs_img=r'C:\Users\Julian\Desktop\testare poze\Mona_Lisa_GS2.jpg', batch_size=1)
-#
-#     cnn = CNN('train', '../../data/processed/HDF5_data_64.h5', nb_neighbors=5, load_weight_epoch=3936, n_batch_per_epoch=200)
-#     cnn.run_cnn()
