@@ -133,10 +133,8 @@ class ConvNetModel(object):
         current_height, current_width = image_dim[1:]
 
         # convolutional parameters
-        # TODO de modficat ca in documentul pdf si verificare , momentan sunt doar 5 layere
         filter_size_list = [64, 128, 256, 512, 512]
 
-        # TODO ultimul ar trebui sa fie 256 din cauza ... vezi pe pdf desenul
         block_size_list = [2, 2, 3, 3, 3]
         subsample_list = [(2, 2), (2, 2), (2, 2), (1, 1), (1, 1)]
 
@@ -178,7 +176,6 @@ class ConvNetModel(object):
         # create last block: Block 8
         x = UpSampling2D(size=(2, 2), name="UpSampling2D")(x)
 
-        # TODO blockul 8 ar trebui sa fie de 128 de filtre cu 3 layere de (1,1)
         # TODO self.convolutional_block(x, block_idx, 128, 3, (1, 1))
         x = self.convolutional_block(x, block_idx, 256, 2, (1, 1))
 
