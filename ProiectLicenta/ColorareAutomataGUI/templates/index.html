@@ -1,0 +1,288 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Bent - Bootstrap Landing Page Template by Dcrazed
+    Site: https://dcrazed.com/bent-app-landing-page-template/
+    Free for personal and commercial use under GNU GPL 3.0 license.
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI | {% block title %}{% page_attribute "page_title" %}{% endblock title %}</title>
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:500,600,700,800,900,400,300' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap -->
+    <link href="/static/theme/html/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Owl Carousel Assets -->
+    <link href="/static/theme/html/css/owl.carousel.css" rel="stylesheet">
+    <link href="/static/theme/html/css/owl.theme.css" rel="stylesheet">
+
+
+    <!-- Pixeden Icon Font -->
+    <link rel="stylesheet" href="/static/theme/html/css/Pe-icon-7-stroke.css">
+
+    <!-- Font Awesome -->
+    <link href="/static/theme/html/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- PrettyPhoto -->
+    <link href="/static/theme/html/css/prettyPhoto.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/static/theme/html/favicon.ico"/>
+
+    <!-- Style -->
+    <link href="/static/theme/html/css/style.css" rel="stylesheet">
+
+    <link href="/static/theme/html/css/animate.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="/static/theme/html/css/responsive.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="/static/theme/html/css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/theme/html/css/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/theme/html/css/component.css"/>
+
+    <link rel="stylesheet" href="/static/theme/html/loading/css/jquery.loadingModal.css">
+
+</head>
+
+<body>
+<!-- PRELOADER -->
+<div class="spn_hol">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+
+<!-- END PRELOADER -->
+
+<!-- =========================
+    START ABOUT US SECTION
+============================== -->
+<section class="header parallax home-parallax page" id="HOME">
+    <h2></h2>
+    <div class="section_overlay">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="/static/theme/html/images/logo.png" alt="Logo">
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- NAV -->
+                        <li><a href="#HOME">HOME</a></li>
+                        <!--<li><a href="#ABOUT">ABOUT </a></li>
+                        <li><a href="#FEATURES">FEATURES</a></li>
+                        <li><a href="#SCREENS">SCREENS</a></li>
+                        <li><a href="#DOWNLOAD">DOWNLOAD </a></li>
+                        <li><a href="#CONTACT">CONTACT </a></li>-->
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container- -->
+        </nav>
+
+        <div class="container home-container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo text-center">
+                        <!-- LOGO -->
+                        <img style="width: 20%" src="/static/theme/html/images/logo.png" alt="">
+                    </div>
+
+                    <div class="home_text text-center" style="text-align:center;">
+                        <h1 style="font-size: 50px;"><strong>Colorare</strong> Automata</h1>
+                        <p style="font-size: 25px;">Utilizați învățarea profundă pentru a colora automat fotografiile alb-negru</p>
+                    </div>
+
+                    <div class="logo text-center" style="padding-top: 30%;">
+                        <a class="btn home-btn wow fadeInLeft" href="#ABOUT">Colorează <i class="fa fa-angle-down"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- END HEADER SECTION -->
+
+
+<!-- =========================
+    START ABOUT US SECTION
+============================== -->
+<section class="about page" id="ABOUT" style="padding-bottom: 150px;">
+    <div class="inner_about_area">
+        <div class="container" style="margin-left: 220px;">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div class="about_phone wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+
+                        <form method="post" id="post-form" name="post-form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+
+
+                                <div class="box">
+                                    <div style="color: white; text-align: left; padding-bottom: 50px;" align="left">
+                                        <h2 style="padding-bottom: 10px;">Colorează Fotografii</h2>
+                                        <p>Aduceți o viață nouă fotografiilor vechi prin colorarea automată a acestora utilizând această
+                                            aplicație.</p>
+                                    </div>
+
+                                    <input type="file" name="userImage" accept="image/*" id="file-7" class="inputfile inputfile-6"
+                                           data-multiple-caption="{count} files selected" style="display: none"/>
+                                    <label for="file-7"><span></span>
+                                        <strong>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                                                <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+                                            </svg>
+                                            Alege un fisier &hellip;
+                                        </strong>
+                                    </label>
+                                    <button type="submit" id="colorButton" onclick="showModal();" class="btn btn-default subs-btn"
+                                            style="float: right;height: 35px;width: 150px;margin-right: 20px;">Colorează
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div style="display: none">
+                    <a href="#FEATURES">FEATURES</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About Us -->
+
+<section id="FEATURES" class="features page">
+    <div class="feature_inner">
+        <div class="container" align="center">
+            <div class="row">
+                {% if uploaded_file_url %}
+                <div class="col-md-6  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+
+                    <div class="inner_about_desc">
+
+                        <!-- SINGLE DESC -->
+                        <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="1s">
+                            <img src="{{ uploaded_file_url }}">
+                        </div>
+                        <!-- END SINGLE DESC -->
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =========================
+     FOOTER 
+============================== -->
+<section class="copyright">
+    <h2></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="copy_right_text">
+                    <!-- COPYRIGHT TEXT -->
+                    <p>Copyright &copy; 2017. All Rights Reserved.</p>
+                    <p>A theme by <a href="https://dcrazed.com/">Dcrazed</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="scroll_top">
+                    <a href="#HOME"><i class="fa fa-angle-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END FOOTER -->
+
+
+<!-- =========================
+     SCRIPTS 
+============================== -->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+<script src="/static/theme/html/js/jquery.min.js"></script>
+<script src="/static/theme/html/js/bootstrap.min.js"></script>
+<script src="/static/theme/html/js/owl.carousel.js"></script>
+<script src="/static/theme/html/js/jquery.fitvids.js"></script>
+<script src="/static/theme/html/js/smoothscroll.js"></script>
+<script src="/static/theme/html/js/jquery.parallax-1.1.3.js"></script>
+<script src="/static/theme/html/js/jquery.prettyPhoto.js"></script>
+<script src="/static/theme/html/js/jquery.ajaxchimp.min.js"></script>
+<script src="/static/theme/html/js/jquery.ajaxchimp.langs.js"></script>
+<script src="/static/theme/html/js/wow.min.js"></script>
+<script src="/static/theme/html/js/waypoints.min.js"></script>
+<script src="/static/theme/html/js/jquery.counterup.min.js"></script>
+<script src="/static/theme/html/js/script.js"></script>
+<script src="/static/theme/html/js/custom-file-input.js"></script>
+
+<script src="/static/theme/html/loading/js/jquery.loadingModal.js"></script>
+
+<script>
+    function showModal() {
+        $('body').loadingModal({text: 'Coloram imaginea ...'});
+
+        var delay = function(ms){ return new Promise(function(r) { setTimeout(r, ms) }) };
+        var time = 100000000;
+
+        delay(time)
+                .then(function() { $('body').loadingModal('hide'); return delay(time); } )
+                .then(function() { $('body').loadingModal('destroy') ;} );
+    }
+
+</script>
+</body><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
